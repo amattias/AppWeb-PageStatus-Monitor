@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AppWeb.Page.Monitor", "AppWeb.Page.Monitor\AppWeb.Page.Monitor.fsproj", "{C39E51FA-A373-4579-A348-DA486BCF16A2}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AppWeb.Page.Monitor.ConsoleApp", "..\AppWeb.Page.Monitor.ConsoleApp\AppWeb.Page.Monitor.ConsoleApp.fsproj", "{512D3677-E0BA-4E7A-A8F5-03BC8C739021}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AppWeb.Page.Monitor.ConsoleApp", "AppWeb.Page.Monitor.ConsoleApp\AppWeb.Page.Monitor.ConsoleApp.fsproj", "{512D3677-E0BA-4E7A-A8F5-03BC8C739021}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

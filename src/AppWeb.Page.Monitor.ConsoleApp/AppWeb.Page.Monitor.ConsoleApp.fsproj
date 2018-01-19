@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\AppWeb.Page.Monitor\AppWeb.Page.Monitor.fsproj" />
+    <ProjectReference Include="..\AppWeb.Page.Monitor\AppWeb.Page.Monitor.fsproj" />
   </ItemGroup>
 
 </Project>
