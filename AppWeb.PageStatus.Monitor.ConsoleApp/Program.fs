@@ -1,8 +1,8 @@
 ﻿// Learn more about F# at http://fsharp.org
 
 open System
-open AppWeb.Page.Monitor
-open DomainTypes
+open AppWeb.PageStatus.Monitor
+open AppWeb.PageStatus.Configuration.DomainTypes
 
 let uri1: PageMonitorUri = {Uri = new Uri("https://www.appweb.se"); MonitorMethod = MonitorMethodUnion.HttpGet}
 let uri2: PageMonitorUri = {Uri = new Uri("https://tinkr.cloud"); MonitorMethod = MonitorMethodUnion.HttpGet}
