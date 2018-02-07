@@ -4,22 +4,23 @@ open System
 open AppWeb.PageStatus.Monitor
 open AppWeb.PageStatus.Configuration.DomainTypes
 
-let uri1: PageMonitorUri = {Uri = new Uri("https://www.appweb.se"); MonitorMethod = MonitorMethodUnion.HttpGet}
-let uri2: PageMonitorUri = {Uri = new Uri("https://tinkr.cloud"); MonitorMethod = MonitorMethodUnion.HttpGet}
-let uri3: PageMonitorUri = {Uri = new Uri("https://test.tinkr.cloud"); MonitorMethod = MonitorMethodUnion.HttpGet}
-let uri4: PageMonitorUri = {Uri = new Uri("https://notvalidurl.tinkr.cloud"); MonitorMethod = MonitorMethodUnion.HttpGet}
+let uriConfigurations = [
+    {Uri = new Uri("https://www.appweb.se"); MonitorMethod = HttpGet}; 
+    {Uri = new Uri("https://tinkr.cloud"); MonitorMethod = HttpGet}; 
+    {Uri = new Uri("https://test.tinkr.cloud"); MonitorMethod = HttpGet}; 
+    {Uri = new Uri("https://notvalidurl.tinkr.cloud"); MonitorMethod = HttpGet};
+]
 
-let uriConfigurations: list<PageMonitorUri> = [uri1; uri2; uri3; uri4]
-
-let printMonitorResult result = printfn "%A" result 
+let printMonitorResult result = 
+    printfn "%A" result 
 
 let runMonitor = 
     let runResult = 
         Monitor.run 
-            uriConfigurations
+        uriConfigurations
     List.map 
-        printMonitorResult 
-        runResult
+    printMonitorResult 
+    runResult
     
 let readLine = 
     printfn 
