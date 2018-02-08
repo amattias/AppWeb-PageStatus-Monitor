@@ -10,13 +10,15 @@ More information about a rough timeplan and so will be shared
 * Windows service integration to automate monitoring
 * ...
 
-### Page status check types ###
-* HttpGet, check so page answeres with 200 OK (implemented)
-* Ping (coming)
-* Keyword (planned)
+### Page status check types implemented ###
+* HttpGet, check so page answeres with 200 OK
+* Ping so host can be successfully pinged
+
+## Possible future check types ##
+* Keyword, check if response contains keyword
 * ...
 
-### Planned integrations ###
+### Possible future integrations ###
 * Email reports and warnings
 * 46elks sms integration for warnings
 * Telegram bot integration for warnings

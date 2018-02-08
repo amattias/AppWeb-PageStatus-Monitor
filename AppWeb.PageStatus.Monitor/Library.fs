@@ -3,7 +3,8 @@ namespace AppWeb.PageStatus.Monitor
 module Monitor =
     open System
     open AppWeb.PageStatus.Configuration.DomainTypes
-    open System.Net
+    open System.Net 
+    open System.Net.NetworkInformation
     open System.Diagnostics
     open System.Linq.Expressions
     
@@ -21,16 +22,21 @@ module Monitor =
         with 
             | :? WebException as ex -> false
        
+    let internal ping uri =
+        let p = new Ping()
+        let success = p.Send((uri:Uri).Host).Status = IPStatus.Success
+        success
+    
     let internal checkUri uriConfiguration = 
         let config = uriConfiguration:PageMonitorUri
         let stopWatch = Stopwatch.StartNew()
         let success = match config.MonitorMethod with 
                         | HttpGet -> httpStatus config.Uri
-                        | Ping -> false
+                        | Ping -> ping config.Uri
                         | _ -> false
         stopWatch.Stop()
         let milliseconds = Convert.ToInt32(stopWatch.Elapsed.TotalMilliseconds)
-        {Uri = uriConfiguration.Uri; Success = success; Milliseconds = milliseconds}
+        {PageMonitorUri = config; Success = success; Milliseconds = milliseconds}
        
     // Run monitor
     let run(uris: list<PageMonitorUri>) = 

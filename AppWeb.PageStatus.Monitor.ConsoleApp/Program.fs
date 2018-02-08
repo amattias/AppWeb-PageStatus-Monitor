@@ -1,35 +1,28 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
+﻿open System
 open AppWeb.PageStatus.Monitor
 open AppWeb.PageStatus.Configuration.DomainTypes
 
 let uriConfigurations = [
     {Uri = new Uri("https://www.appweb.se"); MonitorMethod = HttpGet}; 
     {Uri = new Uri("https://tinkr.cloud"); MonitorMethod = HttpGet}; 
-    {Uri = new Uri("https://test.tinkr.cloud"); MonitorMethod = HttpGet}; 
-    {Uri = new Uri("https://notvalidurl.tinkr.cloud"); MonitorMethod = HttpGet};
+    {Uri = new Uri("https://test.tinkr.cloud"); MonitorMethod = Ping}; 
+    {Uri = new Uri("https://notvalidurl.tinkr.cloud"); MonitorMethod = HttpGet}
 ]
 
-let printMonitorResult result = 
-    printfn "%A" result 
+let print result = printfn "%A" result 
 
 let runMonitor = 
-    let runResult = 
-        Monitor.run 
-        uriConfigurations
+    let result = 
+        Monitor.run uriConfigurations
     List.map 
-    printMonitorResult 
-    runResult
-    
+        print 
+        result
+
 let readLine = 
-    printfn 
-        "%A" 
-        (Console.ReadLine() |> string)
+    printfn "%A" (Console.ReadLine() |> string)
 
 [<EntryPoint>]
 let main argv =
-    Console.WriteLine 
-        runMonitor
+    Console.WriteLine runMonitor 
     readLine
     0
