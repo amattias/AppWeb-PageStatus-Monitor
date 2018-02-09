@@ -14,7 +14,7 @@ More information about a rough timeplan and so will be shared
 * HttpGet, check so page answeres with 200 OK
 * Ping so host can be successfully pinged
 
-## Possible future check types ##
+### Possible future check types ###
 * Keyword, check if response contains keyword
 * ...
 
