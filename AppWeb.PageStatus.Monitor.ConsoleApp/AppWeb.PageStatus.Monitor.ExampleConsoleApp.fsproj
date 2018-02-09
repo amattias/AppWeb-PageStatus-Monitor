@@ -10,7 +10,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="config.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AppWeb.PageStatus.Monitor\AppWeb.PageStatus.Monitor.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.3.3" />
   </ItemGroup>
 
 </Project>

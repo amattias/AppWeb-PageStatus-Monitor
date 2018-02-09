@@ -6,7 +6,6 @@ module Monitor =
     open System.Net 
     open System.Net.NetworkInformation
     open System.Diagnostics
-    open System.Linq.Expressions
     
     let internal checkIfSuccessStatus status = 
         match status with 
@@ -36,7 +35,7 @@ module Monitor =
                         | _ -> false
         stopWatch.Stop()
         let milliseconds = Convert.ToInt32(stopWatch.Elapsed.TotalMilliseconds)
-        {PageMonitorUri = config; Success = success; Milliseconds = milliseconds}
+        {Uri = config; Success = success; Milliseconds = milliseconds}
        
     // Run monitor
     let run(uris: list<PageMonitorUri>) = 

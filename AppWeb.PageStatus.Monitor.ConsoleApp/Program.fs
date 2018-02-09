@@ -1,13 +1,13 @@
 ﻿open System
 open AppWeb.PageStatus.Monitor
 open AppWeb.PageStatus.Configuration.DomainTypes
+open Newtonsoft.Json
+open System.IO
 
-let uriConfigurations = [
-    {Uri = new Uri("https://www.appweb.se"); MonitorMethod = HttpGet}; 
-    {Uri = new Uri("https://tinkr.cloud"); MonitorMethod = HttpGet}; 
-    {Uri = new Uri("https://test.tinkr.cloud"); MonitorMethod = Ping}; 
-    {Uri = new Uri("https://notvalidurl.tinkr.cloud"); MonitorMethod = HttpGet}
-]
+let path = Path.Combine(System.Environment.CurrentDirectory, @"config.json")
+let lines = File.ReadAllLines(path)
+let config = String.Join("", lines)
+let uriConfigurations = JsonConvert.DeserializeObject<list<PageMonitorUri>>(config)
 
 let print result = printfn "%A" result 
 
