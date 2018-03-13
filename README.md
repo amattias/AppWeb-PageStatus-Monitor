@@ -14,6 +14,7 @@ A .NET Core 2 F# library with tools for monitoring your uptime of web-sites/page
 * ...
 
 ### Possible future check types ###
+* HttpPost, check so page answers with 200 OK 
 * Keyword, check if response contains keyword
 * ...
 
