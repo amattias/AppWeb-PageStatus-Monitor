@@ -5,7 +5,7 @@ A .NET Core 2 F# library with tools for monitoring your uptime of web-sites/page
 
 ### Page status check types implemented ###
 * HttpGet, check so page answeres with 200 OK
-* Ping so host can be successfully pinged
+* Ping, check so host can be successfully pinged
 
 ### Core features i'm currently planning/working on ###
 * Client for monitor status of web pages
