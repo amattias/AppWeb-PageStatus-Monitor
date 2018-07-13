@@ -1,15 +1,18 @@
-﻿[{
-	"Uri": "https://www.appweb.se",
-	"MonitorMethod": { "Case": "HttpGet" }
-},
-{
-	"Uri": "https://tinkr.cloud",
-	"MonitorMethod": { "Case": "HttpGet" }
-},
-{
-	"Uri": "https://test.tinkr.cloud",
-	"MonitorMethod": { "Case": "Ping" }
-},{
-	"Uri": "https://notvalidurl.tinkr.cloud",
-	"MonitorMethod": {"Case": "HttpGet"}
-}]
+﻿[
+  {
+    "Uri": "https://www.appweb.se",
+    "MonitorMethod": { "Case": "HttpGet" }
+  },
+  {
+    "Uri": "https://tinkr.cloud",
+    "MonitorMethod": { "Case": "HttpGet" }
+  },
+  {
+    "Uri": "https://test.tinkr.cloud",
+    "MonitorMethod": { "Case": "Ping" }
+  },
+  {
+    "Uri": "https://notvalidurl.tinkr.cloud",
+    "MonitorMethod": { "Case": "HttpGet" }
+  }
+]
