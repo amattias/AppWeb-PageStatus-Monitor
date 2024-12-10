@@ -14,7 +14,7 @@
     <None Include="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <ProjectReference Include="..\AppWeb.PageStatus.Monitor\AppWeb.PageStatus.Monitor.fsproj" />
     <ProjectReference Include="..\AppWeb.PageStatus.Configuration\AppWeb.PageStatus.Configuration.fsproj" />
   </ItemGroup>
